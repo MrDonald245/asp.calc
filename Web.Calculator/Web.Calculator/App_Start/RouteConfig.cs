@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using System.Web.Routing;
 
 namespace Web.Calculator
@@ -15,8 +11,14 @@ namespace Web.Calculator
 
             routes.MapRoute(
                 name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                url: "{controller}/{action}/{par1}/{par2}",
+                defaults: new
+                {
+                    controller = "Home",
+                    action = "Index",
+                    par1 = UrlParameter.Optional,
+                    par2 = UrlParameter.Optional
+                }
             );
         }
     }
